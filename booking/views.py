@@ -1,5 +1,6 @@
 # authicate, permission, token, status, response, generics, apiviews
 from django.contrib.auth import authenticate
+from django.http import HttpResponse
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.authtoken.models import Token
 from rest_framework import status, generics
@@ -10,7 +11,8 @@ from booking.models import Bus, Seat, Booking
 
 
 
-
+def homePage(request):
+    return HttpResponse("<h1>This is Home Page</h1>")
 
 class RegisterView(APIView):
     def post(self, request):
